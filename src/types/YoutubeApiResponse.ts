@@ -13,7 +13,7 @@ export interface YoutubeChannel {
 }
 
 
-export interface YoutubeApiResponse {
+export interface YoutubeApiSuccessResponse {
     kind: string;
     etag: string;
     pageInfo: {
@@ -21,4 +21,16 @@ export interface YoutubeApiResponse {
         resultsPerPage: number;
     };
     items: YoutubeChannel[];
+}
+
+export interface YoutubeApiErrorResponse {
+    error: {
+        code: number;
+        message: string;
+        errors: {
+            domain: string;
+            reason: string;
+            message: string;
+        }[];
+    };
 }
