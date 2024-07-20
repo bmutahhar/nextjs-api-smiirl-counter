@@ -28,6 +28,7 @@ export async function GET(request: Request) {
   const resp = await fetch(completeApiUrl, {
     headers: {
       Accept: "application/json",
+      Referer: process.env.APP_URL || "http://localhost:3000",
     },
     cache: "no-store",
   });
